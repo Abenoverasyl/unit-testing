@@ -5,14 +5,22 @@ import org.junit.Before;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@RunWith(MockitoJUnitRunner.class)
 class SomeBusinessStubMockTest {
 
+    @InjectMocks
     SomeBusinessImpl business = new SomeBusinessImpl();
+
+    @Mock
     SomeDataService dataServiceMock = mock(SomeDataService.class);
 
     @BeforeEach
